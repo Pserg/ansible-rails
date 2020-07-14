@@ -4,3 +4,4 @@
 /site.retry
 roles/rails/templates/master.key
 roles/rails/templates/credentials.yml.enc
+roles/rails/templates/database.yml
