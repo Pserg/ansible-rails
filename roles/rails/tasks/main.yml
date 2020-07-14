@@ -10,8 +10,11 @@
     group: "{{ deploy_user }}"
   with_items: "{{ shared_dirs }}"
 
-- name: Copy secrets.yml
-  template: src=secrets.yml dest={{ deploy_dir }}{{ deploy_app_name }}/shared/config/secrets.yml owner={{ deploy_user }} group={{ deploy_user }}
+- name: Copy master.key
+  template: src=master.key dest={{ deploy_dir }}{{ deploy_app_name }}/shared/config/master.key owner={{ deploy_user }} group={{ deploy_user }}
+
+- name: Credentials
+  template: src=credentials.yml.enc dest={{ deploy_dir }}{{ deploy_app_name }}/shared/config/credentials.yml.enc owner={{ deploy_user }} group={{ deploy_user }}
 
 - name: Copy database.yml
   template: src=database.yml dest={{ deploy_dir }}{{ deploy_app_name }}/shared/config/database.yml owner={{ deploy_user }} group={{ deploy_user }}

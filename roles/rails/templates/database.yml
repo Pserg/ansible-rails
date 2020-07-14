@@ -1,7 +1,7 @@
 production:
-  adapter: {{ app_db_adapter }}
+  adapter: postgresql
   encoding: unicode
-  database: {{ deploy_app_name }}
-  username: {{ deploy_app_name }}
-  password: {{ app_db_password }}
-  host: localhost
+  database: filter_app
+  username: ic
+  password: covid_postgres_1
+  host: ls-a89078db59e133bc13581e4d12fcfe8925ab4a3d.ctmafl6zftgj.us-west-2.rds.amazonaws.com
