@@ -47,9 +47,20 @@ mysql_root_db_password: db_password
 
 # Postgresql
 postgresql_version: 12
-postgresql_ext_install_dev_headers: yes
+postgresql_encoding: "UTF-8"
+postgresql_locale: "en_US.UTF-8"
+postgresql_ctype: "en_US.UTF-8"
+
+postgresql_admin_user: "postgres"
+postgresql_default_auth_method: "peer"
+
+postgresql_service_enabled: true
+postgresql_cluster_name: "main"
+postgresql_cluster_reset: false
+
 postgresql_databases:
   - name: "{{ deploy_app_name }}"
+  - owner: "{{ deploy_app_name }}"
 postgresql_users:
   - name: "{{ deploy_app_name }}"
     pass: "{{ app_db_password }}"

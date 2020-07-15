@@ -15,7 +15,12 @@
     - libxslt1-dev
     - libffi-dev
     - curl
+#    - nodejs
 #    - libcurl3
 #    - libcurl3-gnutls
 #    - libcurl4-openssl-dev
-    - nodejs
+
+- name: install node
+  shell: |
+    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash - && sudo apt-get install -y nodejs
+
